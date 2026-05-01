@@ -1,0 +1,6 @@
+pymysql
+aiomysql
+cryptography
+dbutils
+pyyaml
+openai

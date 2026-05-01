@@ -1,0 +1,13 @@
+db:
+  host: "你的服务器IP"
+  user: "root"
+  password: "你的密码"
+  db: "stress_test_db"
+
+ai:
+  api_key: "sk-xxxxxx"
+  base_url: "https://api.openai.com/v1" # 支持中转站
+
+stress:
+  concurrency: 100    # 并发数
+  duration: 30        # 压测时长（秒）
