@@ -1,0 +1,70 @@
+# 抖音自动福袋助手配置文件
+
+# UI配置
+ui:
+  theme: "light"  # light or dark
+  window_width: 1000
+  window_height: 700
+  always_on_top: false
+
+# 检测配置
+detector:
+  # 福袋识别参数
+  luckybag_color_lower: [100, 50, 0]      # HSV下界
+  luckybag_color_upper: [179, 255, 255]   # HSV上界
+  min_area: 500                             # 最小像素面积
+  
+  # OCR配置
+  ocr_enabled: true
+  ocr_confidence_threshold: 0.5
+  ocr_language: ["ch_sim", "en"]  # 中文和英文
+  
+  # 监测频率
+  detection_interval: 0.1  # 秒
+  screen_capture_resolution: 1920x1080
+
+# 控制配置
+controller:
+  # 点击延迟
+  click_delay_min: 50      # 毫秒
+  click_delay_max: 150
+  
+  # 鼠标速度
+  mouse_speed: 0.5
+  
+  # 防检测
+  random_offset: true      # 随机偏移点击位置
+  offset_range: 10         # 像素范围
+
+# 统计配置
+logger:
+  log_file: "logs/lucky_bag.log"
+  log_level: "INFO"
+  save_statistics: true
+  statistics_file: "data/statistics.json"
+
+# 直播间配置
+live_room:
+  # 支持的直播平台
+  platforms:
+    - "douyin"    # 抖音
+  
+  # 房间监测超时(秒)
+  room_timeout: 3600
+  
+  # 福袋领取冷却时间(秒)
+  cooldown_time: 1
+
+# 高级配置
+advanced:
+  # 多福袋优先级
+  priority_strategy: "first"  # first, largest, random
+  
+  # 系统资源优化
+  use_gpu: false              # 是否使用GPU加速
+  max_threads: 4
+  
+  # 防控措施
+  enable_anti_detection: true
+  random_sleep_interval: [0.5, 2.0]  # 随机休眠间隔
+  daily_limit: 0              # 每日领取次数限制 (0=无限)
